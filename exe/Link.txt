@@ -1,7 +1,9 @@
 
 
-The Todobuddy.exe is a bit learger than 25 MB (The Max File upload size). But you can grab the pre build exe using the link given bellow 
+The Todobuddy.exe is a bit learger than 25 MB (The Max File upload size). But you can grab the pre build exe using the link from my dropbox shared folder given bellow. (I can guarantee that the exe file is 100% safe) 
 
+LINK
 https://www.dropbox.com/sh/517webtrnby7iob/AABVYyrdLFruN5u8hpbgrKWEa?dl=0
+
 
 or you can build your own with the pyinstaller module

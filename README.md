@@ -1,4 +1,4 @@
-# todo-buddy
+# Todo Buddy
 A simple user friendly Todo Lister
 
 

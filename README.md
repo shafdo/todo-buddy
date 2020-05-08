@@ -1,5 +1,5 @@
 # Todo Buddy
-A simple user friendly Todo Lister
+A simple user friendly Todo Lister. Todo Buddy is a user todo lister. This application was created to increase user productivity. Simply add a task and click the tick mark when your done. In the end of the day you could evaluate your performance and reset the list. Todo Buddy is an open source software meaning it is free to use.
 
 
 # Note:

@@ -1,0 +1,190 @@
+html, body{
+    padding: 0px;
+    margin: 0px;
+    
+}
+
+body{
+    overflow-x: hidden;
+    background-color: #005073;
+}
+
+nav{
+    background-color: #107dac;
+}
+
+.addbtn{
+    float: right; 
+    background-color: #1ebbd7 !important;
+    margin-top: 30px;
+    margin-right: 30px;
+}
+
+.resetbtn{
+    float: right; 
+    margin-top: 30px;
+    margin-right: 30px;
+}
+
+.aboutmebtn{
+    float: right; 
+    margin-top: 30px;
+    margin-right: 30px;
+}
+
+.taskerror{
+    float: right; 
+    margin-top: 30px;
+    margin-right: 30px;
+    background-color: #ef5350;
+    transition: 0.8s;
+    padding: 10px;
+    border-radius: 50px;
+    display: none;
+}
+
+.modelfooterbtndone{
+height: 100px !important;
+}
+
+.btndone{
+    background-color: #1ebbd7 !important;
+    margin-bottom: 30px;
+}
+
+.btninvalid{
+    margin-bottom: 30px;
+}
+
+.tabs{
+    background-color: transparent !important;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+.tabs .tab a{
+    transform: scale(1);
+    font-size: 20px;
+    color: #fff;
+    transition: .5s;
+}
+
+.tabs .tab a:hover{
+    transform: scale(0.9);
+    color: #ddd !important;
+}
+
+
+.tabs .tab a.active{
+    background-color:#189ad3 !important;
+    color: #fff !important;
+    border-bottom: 1px solid #fff !important;
+} 
+
+.indicator{
+    display: none;
+}
+
+#all{
+    background-color: #71c7ec;
+    padding: 20px;
+    display: flex;
+}
+
+#completedlist{
+    background-color: #9ccc65;
+    display: flex;
+    padding: 20px;
+    transition: 0.8s;
+}
+
+#incompletelist{
+    background-color: #ffffff7a;
+    display: flex;
+    padding: 20px;
+    transition: 0.8s;
+}
+
+#rowall,#rowcomplete,#rowincomplete{
+    height: 100% !important;
+    display: flex;
+    flex-wrap: wrap;
+    transition: 0.8s;
+}
+
+.taskdivs{
+    background-color: #005073 !important;
+    width: 25% !important;
+    height: 15% !important;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.taskbtns{
+    color: #fff;
+    text-decoration: none;
+}
+
+.taskbtns:hover{
+    color: #fff;
+    text-decoration: none;
+}
+
+.card{
+    min-width: 250px !important;
+}
+
+.card-title{
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 10px; 
+    background-image: linear-gradient(#000, #fd00ff54);
+    height:65px;
+}
+
+
+
+
+.emptybox-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 95vw;
+}
+
+
+.card-content p{
+    overflow-y: scroll;
+}
+
+.profilepic{
+    width: 250px;
+    height: 250px;
+}
+
+.searchdiv{
+    background-color: #fff;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    display: none;
+}
+
+#searchul{
+    list-style: none;
+    width: 100%;
+}
+
+
+.searchdiv ul li{
+    font-size: 20px;
+    padding: 10px 10px 10px 20px;
+}
+

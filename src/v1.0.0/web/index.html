@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo List</title>
+    <script type="text/javascript" src="/eel.js"></script>
+
+    <!-- CSS LINkS -->
+    <link rel="icon" type="image/png" href="imgs/favicon.ico">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link href="fonts/materialicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- End CSS LINkS -->
+
+    <script src="js/jquery3_1_1.min.js"></script>
+    <script src="js/jquery1_0_0.min.js"></script>
+
+
+</head>
+<body>
+    
+
+
+
+    <!-- search bar -->
+    <nav>
+        <div class="nav-wrapper">
+          <form>
+            <div class="input-field">
+              <input id="search" type="search" autocomplete="off" required>
+              <label class="label-icon label4search" for="search"><i class="material-icons searchicon">search</i></label>
+              <i id="closesearchbox" class="material-icons">close</i>
+            </div>
+          </form>
+        </div>
+    </nav>
+    <!-- end search bar -->
+
+
+
+
+    <!-- Search div -->
+    <div class="searchdiv animated">
+      <ul id="searchul">
+
+      </ul>
+    </div>
+
+    <!-- End Search div -->
+
+
+
+
+      <!-- About Me -->
+
+      <a class="btn-floating btn-large waves-effect waves-light red hoverable modal-trigger green aboutmebtn" title="WhoAmi" href="#aboutme"><i class="material-icons">face</i></a>
+      <!-- Modal Structure -->
+      <div id="aboutme" class="modal" style="padding-bottom: 30px;">
+        <div class="modal-content">
+          <h5 style="text-align: center;">Welcome To Todo Buddy (v1.0.0)</h5> 
+          <br> 
+          <h6 style="text-align: center;">Todo Buddy is a user todo lister. This application was created to increase user productivity. Simply add a task and click the tick mark when your done. In the end of the day you could evaluate your performance and reset the list. Todo Buddy is an open source software meaning it is free to use.</h6>
+          <br>
+          <h6 style="text-align: right;">-- Shalinda Fernando (v1.0.0 Creator)</h6>
+        </div>
+        <div class="modal-footer" style="padding-bottom: 30px;">
+          <a href="#!" class="modal-close waves-effect waves-light btn-large" style="background-color: #64b5f6 ;color:#111;">Cancel</a>
+          
+        </div>
+      </div>
+      <!-- End About Me -->
+
+
+
+
+    <!-- reset btn -->
+    <a class="btn-floating btn-large waves-effect waves-light red hoverable modal-trigger resetbtn" title="Reset" href="#removalall"><i class="material-icons">close</i></a>
+    <!-- Modal Structure -->
+    <div id="removalall" class="modal" style="padding-bottom: 30px;">
+      <div class="modal-content">
+        <h4>Are You Sure You Want To Empty List</h4>
+        <p>Note: This Will Completely Reset Everything Meaning You Will Lose All The Completed And Incompleted Tasks</p>
+      </div>
+      <div class="modal-footer" style="padding-bottom: 30px;">
+        <a href="#!" class="modal-close waves-effect waves-light btn-large" style="background-color: #64b5f6 ;color:#111;">Cancel</a>
+        <a id="yeahclearall" href="#!" class="modal-close waves-effect waves-light btn-large red" style="color:#fff;">Yeah Go Ahead</a>
+        
+      </div>
+    </div>
+    <!-- End reset btn -->
+
+
+
+
+    
+    <!-- add btn -->
+    <a class="btn-floating btn-large waves-effect waves-light right-align hoverable modal-trigger addbtn" href="#additem" title="Add"><i class="material-icons">add</i></a>
+    
+    <div id="additem" class="modal">
+
+        <div class="modal-content">
+            <h4>Add An Item</h4>
+
+            <!-- Name The Task -->
+            <div class="row">
+                <div class="input-field col s6">
+                    <input value="" id="first_name2" type="text" class="validate" autocomplete="off">
+                    <label class="active" for="first_name2">Task Name</label>
+                </div>
+            </div>
+            <!-- Name The Task -->
+
+            <!-- desc The Task -->
+            <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input value="" id="textarea1" type="text" class="validate" autocomplete="off">
+                      <label class="active" for="textarea1">Task Description</label>
+
+                    </div>
+                  </div>
+                </form>
+            </div>
+            <!-- END desc The Task -->
+
+        </div>
+
+
+        <div class="modal-footer modelfooterbtndone">
+            <a href="#!" class="btn-floating btn-large modal-close waves-effect waves-light addbtninvalid red"><i class="material-icons">close</i></a>
+        <a href="#!" class="btn-floating btn-large modal-close waves-effect waves-light addbtndone"><i class="material-icons">done</i></a>
+        <!-- <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a> -->
+        </div>
+    </div>
+    <!-- End add btn -->
+
+
+
+    <!-- task Existing Display -->
+    <div class="taskerror animated">
+      <h6>The Task Aleady Exists !!!</h6>
+    </div>
+    <!-- End task Existing Display -->
+
+
+
+
+
+    <!-- TABS -->
+    <div class="row">
+        <div class="col s12">
+          <ul class="tabs">
+            <li class="tab col s6"><a href="#incompletelist" class="active">Incomplete</a></li>
+            <li class="tab col s6"><a href="#completedlist">Completed</a></li>
+          </ul>
+        </div>
+
+
+        <!-- Incomplete Tasks -->
+        <div id="incompletelist" class="col s12">
+          <div id="rowincomplete" class="row">
+
+            <div class="emptybox-wrapper">
+              <img class="emptybox" src="https://img.icons8.com/doodle/200/000000/empty-box.png"/>
+              <h4>Oops Looks Like Your List is Empty</h4>
+            </div>
+
+
+          </div>
+
+
+        </div>
+        <!-- End Incomplete Tasks -->
+
+
+
+        <!-- Completed Tasks -->
+        <div id="completedlist" class="col s12">
+          <div id="rowcomplete" class="row">
+
+
+            <div class="emptybox-wrapper">
+              <img class="emptybox" src="https://img.icons8.com/doodle/200/000000/empty-box.png"/>
+              <h4>Oh, You Have No Completed Tasks</h4>
+            </div>
+
+
+          </div>
+
+
+        </div>
+        <!-- End Completed Tasks -->
+
+
+
+
+
+      </div>
+
+
+    <!-- END TABS -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+const alltasks = []
+
+// initialize materialize components
+$(document).ready(function(){
+    $('ul.tabs').tabs();
+    });
+    $(document).ready(function(){
+    $('ul.tabs').tabs('select_tab', 'tab_id');
+});
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, {});
+      M.updateTextFields();
+      var instance1 = M.Tabs.init(el, {});
+      instance.select('tab_id');
+      insertModal();
+});
+
+  // END initialize materialize components
+        
+
+
+
+        
+
+
+
+// Clear the console after 1 sec to get rid to errors spamming me
+// setTimeout(() => {
+//     console.clear()
+// }, 3000);
+
+
+
+
+
+
+// clear all when reset btn is clicked
+$("#yeahclearall").click(function (e) { 
+  e.preventDefault();
+  let rowincomplete = document.querySelector("#rowincomplete")
+  let rowcomplete = document.querySelector("#rowcomplete")
+
+  rowincomplete.innerHTML = ""
+  rowcomplete.innerHTML = ""
+
+  alltasks.length = 0
+  $("#searchul").remove();
+  document.querySelector(".searchdiv").innerHTML = `<ul id="searchul"></ul>`
+  
+
+  $(".taskerror").css("display", "none");
+
+  rowcomplete.innerHTML += `
+  <div class="emptybox-wrapper">
+    <img class="emptybox" src="https://img.icons8.com/doodle/200/000000/empty-box.png"/>
+    <h4>Hmm, Looks Like Your Completed Task List is Empty</h4>
+  </div>`
+  
+  rowincomplete.innerHTML += `
+  <div class="emptybox-wrapper">
+    <img class="emptybox" src="https://img.icons8.com/doodle/200/000000/empty-box.png"/>
+    <h4>Woah, Well Done Not tasks Here</h4>
+  </div>`
+
+  eel.reset();  
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+// Get privious tasks from minidb
+async function jsreadfromfile() {
+  let return_value = await eel.readfromfile()(); // Must prefix call with 'await'
+  console.log(return_value);
+
+
+  return_value.forEach(i => {
+    let temp = i.split(":") 
+    console.log(temp);
+    
+    let flag = temp[1]
+    flag = flag[flag.length-3]+flag[flag.length-2]+flag[flag.length-1]
+    
+    temp[1] = temp[1].slice(0,-3)
+
+    let imgid = temp[0]
+    
+    alltasks.push(temp[1])
+
+
+    // add tasks to ul
+    $("#searchul").append(`<li>${temp[1]}</li>`);
+
+
+    if (flag == "[I]"){
+      let card = `<div class="col s12 m6 l3">
+        <div class="card">
+        <div class="card-image">
+            <img src="/imgs/${imgid}.jpg">
+            <span class="card-title">${temp[1]}</span>
+            <a class="btn-floating halfway-fab waves-effect waves-light"><i class="material-icons taskdonebtn" style="background-color: #1ebbd7;">done</i></a>
+        </div>
+        <div class="card-content">
+            <p>${temp[2]}</p>
+        </div>
+        </div>
+      </div>`
+    
+      document.querySelector("#rowincomplete").innerHTML += card
+
+      console.log("Done");
+      document.querySelectorAll(".emptybox-wrapper")[0].style.display = "none";
+      $("#incompletelist").css("height", "auto !important");
+
+
+    }
+
+    if (flag == "[C]"){
+      let cardcomplete = `<div class="col s12 m6 l3">
+        <div class="card">
+        <div class="card-image">
+            <img src="/imgs/${imgid}.jpg">
+            <span class="card-title">${temp[1]}</span>
+            <a class="btn-floating halfway-fab waves-effect waves-light"><i class="material-icons taskdonebtn" style="background-color: #1ebbd7;">done</i></a>
+        </div>
+        <div class="card-content">
+            <p>${temp[2]}</p>
+        </div>
+        </div>
+      </div>`
+    
+      document.querySelector("#rowcomplete").innerHTML += cardcomplete
+
+      console.log("Done");
+      document.querySelectorAll(".emptybox-wrapper")[1].style.display = "none";
+
+
+    }
+
+    
+
+  });
+
+
+  // Add and event listner to all the donebtns 
+  let taskdonebtn =  document.querySelectorAll(".taskdonebtn")
+  
+  taskdonebtn.forEach(i => {
+    $(i).click(function (e) { 
+      e.preventDefault();
+      let confirmation = confirm("Have You Completed This task ? ")
+      console.log(confirmation);
+      
+      if (confirmation){
+        let imgurl = e.target.parentNode.parentNode.firstElementChild.currentSrc.split("/")[4].slice(0,-3);
+        let tasktitle = e.target.parentNode.parentNode.childNodes[3].innerText;
+        let taskdesc = e.target.parentNode.parentNode.parentNode.children[1].children[0].innerText;
+        let grandparent = e.target.parentNode.parentElement.parentElement.parentElement
+        let theholecard = e.target.parentNode.parentElement.parentElement.parentElement.innerHTML
+        theholecard = `<div class="col s12 m6 l3">${theholecard}</div>`
+        console.log(imgurl,tasktitle,taskdesc,e);
+
+          
+        document.querySelectorAll(".emptybox-wrapper")[1].style.display = "none";
+        document.querySelector("#rowcomplete").innerHTML += theholecard
+
+
+
+        $(grandparent).remove();
+
+
+        // Send to the updator py funtion to add [C] Completed to the minidb
+        eel.updator(tasktitle)   
+
+      
+      }
+
+    });
+  }); // 4 loop end
+
+
+  
+}
+
+jsreadfromfile();
+
+
+
+
+
+
+
+
+
+
+
+// Get all the inputs and send them to minidb
+$(".addbtndone").click(function (e) { 
+    e.preventDefault();
+    let taskname = $("#first_name2").val();
+    let taskdesc = $("#textarea1").val();
+
+
+    // If same task NOT existsing
+    if (! alltasks.includes(taskname)) {
+      
+      console.log("No thats Not There");
+      
+      alltasks.push(taskname)
+
+      console.log(`All tasks = ${alltasks}`);
+      
+
+      // add tasks to ul also removed duplicates
+      $("#searchul").append(`<li>${taskname}</li>`);
+      // alltasks.forEach(task => {
+      // });
+
+
+      $(".taskerror").addClass("FadeOutRight");
+      setTimeout(() => {
+        $(".taskerror").css("display", "none");
+      }, 800);
+
+      $("#first_name2").val("");
+      $("#textarea1").val("");
+
+      let imgid = Math.floor(Math.random() * (15 - 1 + 1)) + 1;
+      imgid = imgid.toString()
+      console.log(`name = ${taskname} and desc = ${taskdesc} and idimg = ${imgid}`)
+
+      let custom_card = `
+      <div class="col s12 m6 l3">
+        <div class="card">
+          <div class="card-image">
+              <img src="/imgs/${imgid}.jpg">
+              <span class="card-title">${taskname}</span>
+              <a class="btn-floating halfway-fab waves-effect waves-light"><i class="material-icons taskdonebtn" style="background-color: #1ebbd7;">done</i></a>
+          </div>
+          <div class="card-content">
+              <p>${taskdesc}</p>
+          </div>
+        </div>
+      </div>`
+
+      // Append the card to 
+      document.querySelector("#rowincomplete").innerHTML += custom_card   // Tab incomplete
+      document.querySelectorAll(".emptybox-wrapper")[0].style.display = "none";
+
+      
+      taskname+="[I]"  // add flag All and Incomplete to identify to which tab the task is belonging to
+      eel.writetofile(imgid,taskname,taskdesc)   
+
+      let taskdonebtn =  document.querySelectorAll(".taskdonebtn")
+      console.log(taskdonebtn);
+
+      taskdonebtn.forEach(i => {
+        $(i).click(function (e) { 
+          e.preventDefault();
+          let confirmation = confirm("Have You Completed This task ? ")
+          console.log(confirmation);
+          
+          if (confirmation){
+            let imgurl = e.target.parentNode.parentNode.firstElementChild.currentSrc.split("/")[4].slice(0,-3);
+            let tasktitle = e.target.parentNode.parentNode.childNodes[3].innerText;
+            let taskdesc = e.target.parentNode.parentNode.parentNode.children[1].children[0].innerText;
+            let grandparent = e.target.parentNode.parentElement.parentElement.parentElement
+            let theholecard = e.target.parentNode.parentElement.parentElement.parentElement.innerHTML
+            theholecard = `<div class="col s12 m6 l3">${theholecard}</div>`
+            console.log(imgurl,tasktitle,taskdesc,e);
+
+              
+            document.querySelectorAll(".emptybox-wrapper")[1].style.display = "none";
+            document.querySelector("#rowcomplete").innerHTML += theholecard
+
+
+
+            $(grandparent).remove();
+
+
+            // Send to the updator py funtion to add [C] Completed to the minidb
+            eel.updator(tasktitle)   
+
+            // Add empty wrapper if incompleted has no childrens after 1 sec
+            setTimeout(() => {
+              console.log(document.querySelector("#rowincomplete").children)
+              if (document.querySelector("#rowincomplete").childElementCount <= 1){
+                document.querySelectorAll(".emptybox-wrapper")[0].style.display = "flex";
+              }
+            }, 1000);
+          
+          }
+
+        });
+      }); // 4 loop end
+
+
+
+    }
+    else{
+    
+      console.log("Error");
+      console.log("yeah thats there");
+      console.log(alltasks);
+      
+      $(".taskerror").css("display", "flex");
+      $(".taskerror").addClass("slideInRight");
+
+
+
+
+    }
+
+    
+
+});
+
+
+
+
+
+
+
+// Search Feature
+function todowhensearching() {
+  
+
+  $("#search").click(function (e) { 
+    e.preventDefault();
+    $(".searchdiv").css("display", "block");
+    $(".searchdiv").addClass("fadeIn");
+    setTimeout(() => {
+      $(".searchdiv").removeClass("fadeIn");
+    }, 1000);
+    $("#closesearchbox").css("visibility", "visible");
+    $(".searchicon").css("color", "#111");
+
+  });
+
+
+  $("#closesearchbox").click(function (e) { 
+    e.preventDefault();
+    $(".searchdiv").addClass("fadeOut");
+    setTimeout(() => {
+      $(".searchdiv").css("display", "none");
+      $(".searchdiv").removeClass("fadeOut");
+    }, 1000);
+
+    $("nav").css("background-color", "#107dac");
+    $(".label4search").removeClass("active");
+    $(".searchicon").css("color", "#fff");
+    $("#closesearchbox").css("visibility", "hidden");
+
+  });
+
+
+
+
+  $(".searchdiv").click(function (e) { 
+    e.preventDefault();
+    $("nav").css("background-color", "#fff");
+    $(".label4search").addClass("active");
+    $(".searchicon").css("color", "#111");
+    $("#closesearchbox").css("visibility", "visible");
+    $("#closesearchbox").css("color", "#111");
+
+  });
+
+
+  // appending the tasks to ul
+  console.log(`All tasts ===> ${alltasks}`)
+  
+
+
+  // $(".searchdiv").css("display", "");
+
+
+}
+
+
+todowhensearching()
+
+
+
+
+
+
+
+
+
+        
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

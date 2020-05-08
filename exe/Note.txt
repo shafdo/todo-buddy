@@ -4,6 +4,6 @@
 Due to the file upload limits I cannot upload the pre build compresseed exe file with the size of 26mb to this github repo becuase the max file upload size s 25mb (Yeah I know that was so close). But you can download the file from my Google Drive Todo-Buddy Link given bellow. (The file is secure becuase Google Drive scans a file for viruses before the file is downloaded or shared.)
 
 # Link
-https://drive.google.com/file/d/18DcIFm4cGMzDET782uZ7osZprW-JA4gP/view?usp=sharing
+https://drive.google.com/drive/folders/1GVndFrCrJ1_0S3PbKRufPhbWu1zmWo-0?usp=sharing
 
 Enjoy

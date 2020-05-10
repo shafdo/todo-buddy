@@ -1,0 +1,7 @@
+
+Due to the file upload limits I cannot upload the pre build compresseed executable (exe) file to github becuase the file size of most executables exceeds the github max file upload size. But you can download the your desired version of todobuddy from the Google Drive Todo-Buddy application archive given bellow. (The file is secure becuase Google Drive scans a file for viruses before the file is downloaded or shared.)
+
+# Application Archive Link 
+https://drive.google.com/drive/folders/1GVndFrCrJ1_0S3PbKRufPhbWu1zmWo-0?usp=sharing
+
+

@@ -10,6 +10,6 @@ https://drive.google.com/drive/folders/1GVndFrCrJ1_0S3PbKRufPhbWu1zmWo-0?usp=sha
 
 
 # Todo Buddy Version Direct Downloads
-# v1.0.0
+# > v1.0.0
 
 https://drive.google.com/open?id=1Zs4KIeaapeZbj3rFlp05AMtjrE1oJGSr
